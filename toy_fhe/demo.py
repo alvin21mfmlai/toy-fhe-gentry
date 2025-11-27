@@ -251,6 +251,10 @@ if __name__ == "__main__":
     #  - basic FHE operations and noise,
     #  - a homomorphic adder circuit,
     #  - a homomorphic subtract/compare circuit.
+    print("\n------------ Running Demo 1 ------------")
     demo_toy_fhe() ## To perform Demo 1 
+    print("\n------------ Running Demo 2 ------------")
     demo_fhe_adder() ## To perform Demo 2 
+    print("\n------------ Running Demo 3 ------------")
     demo_fhe_compare_sub() ## To perform Demo 3
+    print("\n------------Completed Demo ------------")
