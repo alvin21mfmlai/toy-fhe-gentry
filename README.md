@@ -1,6 +1,6 @@
 # toy-fhe-gentry
 
-A didactic Python 3 implementation of a **toy somewhat homomorphic encryption (SHE)** scheme inspired by Gentry’s 2009 FHE blueprint (via a DGHV-style integer construction). The project includes:
+A didactic Python 3 implementation of a **toy somewhat homomorphic encryption (SHE)** scheme inspired by Gentry’s 2009 FHE blueprint [1] (via a DGHV-style integer construction). The project includes:
 
 - A simple integer-based HE core (`ToyDGHV`).
 - Homomorphic Boolean gates (XOR / AND / NOT).
@@ -102,3 +102,24 @@ This will perform the following:
  - Run a basic ToyDGHV demo (encrypt/decrypt, add/mul, noise estimates).
  - Run a 4-bit homomorphic adder demo.
  - Run a 3-bit homomorphic subtract/compare demo.
+
+## 6. Limitations & Security Caveats
+
+- Not secure: parameters are very small, no formal hardness assumptions, and encryption uses the secret key directly (no real public key).
+- Not optimized: operations are naive Python integers; no big-integer or lattice acceleration.
+- Limited depth: noise grows rapidly, so only short circuits decrypt correctly under these parameters.
+
+Note that the above is entirely intentional since the aim is to illustrate the simplified structure of Gentry's construction, not to provide a production FHE implementation.
+
+## 7. Relation to Gentry’s FHE and DGHV
+
+Conceptually, this implementation highlights the following ideas from Gentry’s and DGHV’s work:
+
+- Ciphertexts are noisy encodings of plaintexts (analogue of 𝑏=⟨𝑎,𝑠⟩+𝜇+𝑒b=⟨a,s⟩+μ+e).
+- Correctness is governed by a noise budget and radius bounds.
+- Homomorphic operations correspond to Boolean and arithmetic circuits.
+- Decryption itself is a circuit on bits (e.g., computing (c mod p) mod 2), which in principle can be evaluated homomorphically (bootstrapping).
+- Small arithmetic circuits (add/sub/compare) are the “control logic” building blocks that one would use in a decryption circuit for DGHV or in squashing/bootstrapping for Gentry’s FHE.
+
+## 8. References
+[1] Gentry, C. (2009, May). Fully homomorphic encryption using ideal lattices. In Proceed-ings of the forty-first annual ACM symposium on Theory of computing (pp. 169-178).
