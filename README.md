@@ -102,4 +102,3 @@ This will perform the following:
  - Run a basic ToyDGHV demo (encrypt/decrypt, add/mul, noise estimates).
  - Run a 4-bit homomorphic adder demo.
  - Run a 3-bit homomorphic subtract/compare demo.
-
