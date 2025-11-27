@@ -54,30 +54,11 @@ toy-fhe-gentry/
 └── README.md            # This file
 ```
 
-## 1. Motivation & Background
+## 3. Dependencies & Requirements
 
-Gentry’s original FHE scheme is built over ideal lattices and involves:
+Python: 3.x
 
-- Noisy ciphertexts (“message + error” in a lattice).
-- Homomorphic operations expressed as circuits.
-- Decryption represented as a small circuit that can be evaluated homomorphically (bootstrapping).
-- Squashing and additional hardness assumptions (e.g. SplitKey).
-
-Implementing that full construction directly is complex. This repository instead uses a **DGHV-style integer scheme** that mirrors the same architecture:
-
-- Ciphertexts have the form  
-  \[
-  c = m + 2r + (p*q),
-  \]
-  where \(m\) is a bit, \(r\) is a small noise term, and \(p\) is the secret odd integer.
-- Decryption recovers  
-  \[
-  m = (c * mod p)*mod 2,
-  \]
-  as long as the noise is small enough.
-- Homomorphic operations are just integer addition and multiplication on ciphertexts.
-- Boolean gates and small arithmetic circuits are built on top of these operations, so decryption (and other logic) can be viewed as a circuit.
-
-This is exactly the perspective used in Gentry’s framework: HE is “just” evaluating circuits on encrypted data, with noise and depth being the main constraints.
+- Libraries: only Python’s standard library (random, dataclasses)
+- No external crypto or FHE libraries are used. This respects typical course/assignment constraints that disallow using existing implementations of the target cryptographic algorithms.
 
 ---
