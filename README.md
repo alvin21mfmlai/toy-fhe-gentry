@@ -89,7 +89,7 @@ make run
 make demos
 ```
 
-### 5.2 Running demos directly
+### 5.2 OR (Preferably) Running demos directly
 
 You can run the demo module directly:
 
