@@ -94,7 +94,7 @@ make demos
 You can run the demo module directly:
 
 ```text
-python3 -m toy_fhe.demo
+python3 -m toy_fhe.demo > outputs.txt
 ```
 
 This will perform the following:
