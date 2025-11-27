@@ -24,12 +24,12 @@ Implementing that full construction directly is complex. This repository instead
 
 - Ciphertexts have the form  
   \[
-  c = m + 2r + p q,
+  c = m + 2r + (p*q),
   \]
   where \(m\) is a bit, \(r\) is a small noise term, and \(p\) is the secret odd integer.
 - Decryption recovers  
   \[
-  m = (c \bmod p) \bmod 2,
+  m = (c * mod p)*mod 2,
   \]
   as long as the noise is small enough.
 - Homomorphic operations are just integer addition and multiplication on ciphertexts.
