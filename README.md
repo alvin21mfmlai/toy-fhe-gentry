@@ -74,3 +74,32 @@ python3 --version
 ```
 
 No extra installation steps are required; the package uses only the standard library.
+
+## 5. Building & Running
+
+### 5.1 Using the Makefile
+
+A simple Makefile is provided:
+
+```text
+# Run all demos (basic FHE, adder, comparator)
+make run
+
+# or
+make demos
+```
+
+### 5.2 Running demos directly
+
+You can run the demo module directly:
+
+```text
+python3 -m toy_fhe.demo
+```
+
+This will perform the following:
+
+ - Run a basic ToyDGHV demo (encrypt/decrypt, add/mul, noise estimates).
+ - Run a 4-bit homomorphic adder demo.
+ - Run a 3-bit homomorphic subtract/compare demo.
+
