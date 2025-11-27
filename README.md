@@ -56,9 +56,21 @@ toy-fhe-gentry/
 
 ## 3. Dependencies & Requirements
 
-Python: 3.x
-
+- Python Version: Python- 3.x
 - Libraries: only Python’s standard library (random, dataclasses)
 - No external crypto or FHE libraries are used. This respects typical course/assignment constraints that disallow using existing implementations of the target cryptographic algorithms.
 
----
+## 4. Installation & Setup
+
+Clone the repository:
+```text
+git clone https://github.com/alvin21mfmlai/toy-fhe-gentry.git
+cd toy-fhe-gentry
+```
+
+Ensure Python 3 is available:
+```text
+python3 --version
+```
+
+No extra installation steps are required; the package uses only the standard library.
