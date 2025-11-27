@@ -53,7 +53,7 @@ def demo_toy_fhe():
 
     Conceptual link to report:
       - This corresponds loosely to the "somewhat homomorphic" regime
-        discussed in Sections 3–4, where noise grows under operations,
+        discussed in Section 4 of author's paper/report, where noise grows under operations,
         and correctness depends on staying within a noise budget.
     """
     # Choose parameters with modest p_bits and r_bound so computations
@@ -116,7 +116,7 @@ def demo_fhe_adder():
       - Uses FHEAdder.ripple_add to compute A+B mod 2^4 homomorphically.
       - Decrypts the result to check correctness and prints the carry-out.
 
-    Conceptual link to report:
+    Conceptual link to author's paper/report:
       - This is a concrete example of a non-trivial circuit (4-bit adder)
         evaluated under encryption.
       - In Gentry/DGHV, decryption and mod-p logic are built from similar
@@ -177,7 +177,7 @@ def demo_fhe_compare_sub():
       - Also uses FHEAdder.geq directly.
       - Decrypts and compares all results with plaintext arithmetic.
 
-    Conceptual link to report:
+    Conceptual link to author's paper/report:
       - Subtraction and comparison circuits (A-B, A >= B) are the kinds
         of "control-flow" building blocks used in a decryption circuit
         (e.g., implementing c mod p).
